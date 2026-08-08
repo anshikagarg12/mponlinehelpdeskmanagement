@@ -113,6 +113,3 @@ Open the MVC app at **http://localhost:5200**.
 dotnet test
 ```
 
-## Note
-
-This project is ready to be pushed to Git.
