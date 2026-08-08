@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesk.Api", "HelpDesk.Api\HelpDesk.Api.csproj", "{208C60AC-7ECB-474F-B2B5-22ACE7448FE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesk.Mvc", "HelpDesk.Mvc\HelpDesk.Mvc.csproj", "{FF3BBE65-5A4C-4D99-A806-2A7B606DDBEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesk.Tests", "HelpDesk.Tests\HelpDesk.Tests.csproj", "{B657AE24-DB7D-4488-95AF-DB558C351DD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{208C60AC-7ECB-474F-B2B5-22ACE7448FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208C60AC-7ECB-474F-B2B5-22ACE7448FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208C60AC-7ECB-474F-B2B5-22ACE7448FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208C60AC-7ECB-474F-B2B5-22ACE7448FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3BBE65-5A4C-4D99-A806-2A7B606DDBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3BBE65-5A4C-4D99-A806-2A7B606DDBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3BBE65-5A4C-4D99-A806-2A7B606DDBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3BBE65-5A4C-4D99-A806-2A7B606DDBEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B657AE24-DB7D-4488-95AF-DB558C351DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B657AE24-DB7D-4488-95AF-DB558C351DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B657AE24-DB7D-4488-95AF-DB558C351DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B657AE24-DB7D-4488-95AF-DB558C351DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

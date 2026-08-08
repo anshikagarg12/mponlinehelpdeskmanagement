@@ -1,0 +1,38 @@
+## Build outputs
+bin/
+obj/
+.vs/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## Test results
+[Tt]est[Rr]esult*/
+*.trx
+
+## NuGet
+*.nupkg
+packages/
+project.lock.json
+
+## OS files
+.DS_Store
+Thumbs.db

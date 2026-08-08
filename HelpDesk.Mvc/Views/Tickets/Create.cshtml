@@ -1,0 +1,53 @@
+@model Ticket
+@{
+    ViewData["Title"] = "Raise New Ticket";
+}
+
+<h1 class="h3 mb-4">Raise New Ticket</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Priority" class="form-label"></label>
+                <select asp-for="Priority" asp-items="ViewBag.Priorities" class="form-select">
+                    <option value="">-- Select Priority --</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="RaisedBy" class="form-label"></label>
+                <input asp-for="RaisedBy" class="form-control" />
+                <span asp-validation-for="RaisedBy" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <input class="form-control" value="Open" readonly />
+                <div class="form-text">New tickets are always created with status <strong>Open</strong>.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Ticket</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

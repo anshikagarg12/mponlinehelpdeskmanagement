@@ -1,0 +1,86 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">Help Desk Dashboard</h1>
+    <a asp-controller="Tickets" asp-action="Create" class="btn btn-primary">
+        + Raise New Ticket
+    </a>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3 col-6">
+        <div class="card text-bg-primary shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-uppercase">Total Tickets</h6>
+                <p class="display-6 mb-0">@Model.TotalTickets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-bg-warning shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-uppercase">Open Tickets</h6>
+                <p class="display-6 mb-0">@Model.OpenTickets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-bg-info shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-uppercase">In Progress</h6>
+                <p class="display-6 mb-0">@Model.InProgressTickets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-bg-success shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-uppercase">Closed Tickets</h6>
+                <p class="display-6 mb-0">@Model.ClosedTickets</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="fw-semibold">Recent Tickets</span>
+        <a asp-controller="Tickets" asp-action="Index" class="btn btn-sm btn-outline-secondary">View All</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Raised By</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.RecentTickets.Any())
+                {
+                    <tr><td colspan="6" class="text-center text-muted py-3">No tickets yet.</td></tr>
+                }
+                @foreach (var ticket in Model.RecentTickets)
+                {
+                    <tr>
+                        <td>@ticket.Id</td>
+                        <td>
+                            <a asp-controller="Tickets" asp-action="Details" asp-route-id="@ticket.Id">@ticket.Title</a>
+                        </td>
+                        <td>@ticket.Priority</td>
+                        <td>@ticket.Status</td>
+                        <td>@ticket.RaisedBy</td>
+                        <td>@ticket.CreatedDate.ToString("dd MMM yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
